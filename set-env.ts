@@ -8,7 +8,8 @@ require('dotenv').config();
 
 const envConfigFile = `export const environment = {
     PRODUCTION: ${process.env['NODE_ENV'] === 'production'},
-    ENVIRONMENT: ${process.env['NODE_ENV']},
+    ENVIRONMENT: '${process.env['NODE_ENV']}',
+    BOOK_STORE_BASE_URL: '${process.env['BOOK_STORE_BASE_URL']}'
 };`;
 
 console.log(colors.magenta('🦄The file `environment.ts` will be written with the following content: \n'));

@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
     env_file:
-      - .env.dev
+      - .env
     expose:
       - "8000"
     command: tail -f /dev/null

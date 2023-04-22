@@ -8,6 +8,7 @@
     "build": "npm run config && ng build",
     "watch": "npm run config && ng build --watch --configuration development",
     "test": "npm run config && ng test",
+    "test:ci": "npm run config && ng test --browsers=ChromeHeadless --no-watch",
     "deploy": "npm run config && ng build --base-href=/angular-books-list-web/"
   },
   "private": true,

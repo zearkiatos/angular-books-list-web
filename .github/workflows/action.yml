@@ -34,7 +34,7 @@ jobs:
         NG_CLI_ANALYTICS: ${{ secrets.NG_CLI_ANALYTICS }}
         BASE_URL: ${{ secrets.BOOK_STORE_BASE_URL }}
     - name: Test 🧪
-      run: npm run test
+      run: npm run test:ci
     - name: Build docker 🐳
       run: docker build . -t=angular-books-list-web:build-$GITHUB_RUN_NUMBER
     - name: Build

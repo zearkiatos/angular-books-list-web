@@ -1,6 +1,8 @@
 # Description
 This is an 🅰️ngular web application about books 📕 and how to create list in 🅰️ngular
 
+![Github](https://github.com/zearkiatos/angular-books-list-web/actions/workflows/action.yml/badge.svg)
+
 # Make with
 [![Angular](https://img.shields.io/badge/angular-c42d30?style=for-the-badge&logo=angular&logoColor=white&labelColor=000000)]()
 [![JavaScript](https://img.shields.io/badge/javascript-ead547?style=for-the-badge&logo=javascript&logoColor=white&labelColor=000000)]()

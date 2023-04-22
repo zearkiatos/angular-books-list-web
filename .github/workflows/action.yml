@@ -33,6 +33,8 @@ jobs:
         NODE_ENV: ${{ secrets.NODE_ENV }}
         NG_CLI_ANALYTICS: ${{ secrets.NG_CLI_ANALYTICS }}
         BASE_URL: ${{ secrets.BOOK_STORE_BASE_URL }}
+    - name: Test 🧪
+      run: npm run test
     - name: Build docker 🐳
       run: docker build . -t=angular-books-list-web:build-$GITHUB_RUN_NUMBER
     - name: Build
@@ -53,7 +55,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: production-files
-        path: ./dist/angular-course-web
+        path: ./dist/angular-books-list-web
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3

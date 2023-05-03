@@ -26,4 +26,11 @@
       </dl>
     </div>
   </div>
+  <hr />
+  <h1> Movie Review </h1>
+  <div class="row" *ngFor="let review of bookDetail.reviews">
+    <div class="col">
+      <p><b>{{review.name}}:</b> {{review.description}}</p>
+    </div>
+  </div>
 </div>

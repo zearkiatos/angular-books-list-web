@@ -34,6 +34,7 @@ describe('BookDetailComponent', () => {
     );
 
     const authors: Author[] = [];
+    const reviews: Review[] = [];
     for (let i = 0; i < 3; i++) {
       const author = new Author(
         faker.datatype.number(),
@@ -44,6 +45,16 @@ describe('BookDetailComponent', () => {
       );
       authors.push(author);
     }
+
+    for (let i = 0; i < 3; i++) {
+      const review = new Review(
+        faker.datatype.number(),
+        faker.lorem.sentence(),
+        faker.name.firstName(),
+        faker.lorem.sentence(),
+      );
+      reviews.push(review);
+    }
     component.bookDetail = new BookDetail(
       faker.datatype.number(),
       faker.lorem.sentence(),
@@ -53,7 +64,7 @@ describe('BookDetailComponent', () => {
       faker.date.past(),
       editorial,
       authors,
-      []
+      reviews
     );
     fixture.detectChanges();
     debug = fixture.debugElement;
@@ -106,5 +117,9 @@ describe('BookDetailComponent', () => {
       return value.nativeElement.textContent == 'Editorial';
     });
     expect(node?.nativeElement.nextSibling.textContent).toContain(component.bookDetail.editorial.name);
+  });
+
+  it('should have 3 <dd> elements of reviews', () => {
+    expect(debug.queryAll(By.css('div.col>p'))).toHaveSize(3);
   });
 });

@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookModule } from './book/book.module';
 import { EditorialModule } from './editorial/editorial.module';
+import { AuthorModule } from './author/author.module';
+import { ReviewModule } from './review/review.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { EditorialModule } from './editorial/editorial.module';
     AppRoutingModule,
     BookModule,
     EditorialModule,
+    AuthorModule,
+    ReviewModule,
     HttpClientModule
   ],
   providers: [],

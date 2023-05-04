@@ -20,7 +20,6 @@ import { AuthorDetailComponent } from './author/author-detail/author-detail.comp
     BookRoutingModule,
     AuthorRoutingModule,
     BookModule,
-    EditorialModule,
     AuthorModule,
     ReviewModule,
     HttpClientModule,

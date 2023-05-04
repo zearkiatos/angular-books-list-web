@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [CommonModule, RouterModule],
+  exports: [],
+  declarations: [],
 })
-export class AuthorModule { }
+export class AuthorModule {}

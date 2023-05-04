@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { faker } from '@faker-js/faker';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
@@ -19,7 +20,7 @@ describe('BookDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
       declarations: [BookDetailComponent],
       providers: [BookService],
     }).compileComponents();
@@ -30,7 +31,8 @@ describe('BookDetailComponent', () => {
     component = fixture.componentInstance;
     const editorial = new Editorial(
       faker.datatype.number(),
-      faker.lorem.sentence()
+      faker.lorem.sentence(),
+      []
     );
 
     const authors: Author[] = [];
@@ -51,7 +53,7 @@ describe('BookDetailComponent', () => {
         faker.datatype.number(),
         faker.lorem.sentence(),
         faker.name.firstName(),
-        faker.lorem.sentence(),
+        faker.lorem.sentence()
       );
       reviews.push(review);
     }
@@ -96,27 +98,33 @@ describe('BookDetailComponent', () => {
   });
 
   it('should have one dd tag for component.bookDetail.isbn', () => {
-    const allDt : DebugElement[] = debug.queryAll(By.css('dt'));
+    const allDt: DebugElement[] = debug.queryAll(By.css('dt'));
     const node = allDt.find((value) => {
       return value.nativeElement.textContent == 'ISBN';
     });
-    expect(node?.nativeElement.nextSibling.textContent).toContain(component.bookDetail.isbn);
+    expect(node?.nativeElement.nextSibling.textContent).toContain(
+      component.bookDetail.isbn
+    );
   });
 
   it('should have one dd tag for component.bookDetail.publishingDate', () => {
-    const allDt : DebugElement[]= debug.queryAll(By.css('dt'));
+    const allDt: DebugElement[] = debug.queryAll(By.css('dt'));
     const node = allDt.find((value) => {
       return value.nativeElement.textContent == 'Publishing Date';
     });
-    expect(node?.nativeElement.nextSibling.textContent).toContain(component.bookDetail.publishingDate);
+    expect(node?.nativeElement.nextSibling.textContent).toContain(
+      component.bookDetail.publishingDate
+    );
   });
 
   it('should have one dd tag for component.bookDetail.editorial.name', () => {
-    const allDt : DebugElement[]= debug.queryAll(By.css('dt'));
+    const allDt: DebugElement[] = debug.queryAll(By.css('dt'));
     const node = allDt.find((value) => {
       return value.nativeElement.textContent == 'Editorial';
     });
-    expect(node?.nativeElement.nextSibling.textContent).toContain(component.bookDetail.editorial.name);
+    expect(node?.nativeElement.nextSibling.textContent).toContain(
+      component.bookDetail.editorial.name
+    );
   });
 
   it('should have 3 <dd> elements of reviews', () => {

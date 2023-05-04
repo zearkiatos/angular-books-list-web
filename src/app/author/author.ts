@@ -1,3 +1,4 @@
+import { Book } from '../book/book';
 class Author {
   id: number;
   name: string;
@@ -10,7 +11,7 @@ class Author {
     name: string,
     birthDate: Date,
     image: string,
-    description: string
+    description: string,
   ) {
     this.id = id;
     this.name = name;

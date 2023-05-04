@@ -8,21 +8,23 @@ import { BookModule } from './book/book.module';
 import { EditorialModule } from './editorial/editorial.module';
 import { AuthorModule } from './author/author.module';
 import { ReviewModule } from './review/review.module';
+import { BookRoutingModule } from './book/book.routing';
+import { AuthorRoutingModule } from './author/author.routing';
+import { AuthorDetailComponent } from './author/author-detail/author-detail.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, AuthorDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BookRoutingModule,
+    AuthorRoutingModule,
     BookModule,
-    EditorialModule,
     AuthorModule,
     ReviewModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

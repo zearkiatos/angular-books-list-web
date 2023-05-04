@@ -29,7 +29,8 @@ describe('BookListComponent', () => {
     component = fixture.componentInstance;
     const editorial = new Editorial(
       faker.datatype.number(),
-      faker.lorem.sentence()
+      faker.lorem.sentence(),
+      []
     );
 
     for (let i = 0; i < 10; i++) {

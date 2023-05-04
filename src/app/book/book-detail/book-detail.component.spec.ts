@@ -1,13 +1,13 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { faker } from '@faker-js/faker';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { Editorial } from 'src/app/editorial/editorial';
 import { Author } from 'src/app/author/author';
 import { Review } from 'src/app/review/review';
-import { Book } from '../book';
 
 import { BookDetailComponent } from './book-detail.component';
 import { BookService } from '../book.service';
@@ -20,7 +20,7 @@ describe('BookDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
       declarations: [BookDetailComponent],
       providers: [BookService],
     }).compileComponents();

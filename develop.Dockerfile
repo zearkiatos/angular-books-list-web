@@ -4,14 +4,12 @@ COPY ["package.json","package-lock.json","/home/node/app/"]
 
 WORKDIR /app
 
-RUN apk update && \
-    apk add --update nodejs
+RUN apk update
+RUN npm install -g npm@9.6.6
 
 COPY [".","."]
-RUN npm install -g npm@9.6.5
-CMD npm install -g @angular/cli && \
-    npm rebuild node-sass && \
-    npm install
+CMD npm install
+RUN npm install -g @angular/cli
 EXPOSE 8000
 
 ENTRYPOINT ["sh", "./docker/entrypoint.sh"]

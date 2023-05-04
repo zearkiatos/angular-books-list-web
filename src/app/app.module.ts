@@ -8,6 +8,7 @@ import { BookModule } from './book/book.module';
 import { EditorialModule } from './editorial/editorial.module';
 import { AuthorModule } from './author/author.module';
 import { ReviewModule } from './review/review.module';
+import { BookRoutingModule } from './book.routing';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReviewModule } from './review/review.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BookRoutingModule,
     BookModule,
     EditorialModule,
     AuthorModule,

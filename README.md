@@ -9,6 +9,10 @@ This is an 🅰️ngular web application about books 📕 and how to create list
 [![TypeScript](https://img.shields.io/badge/TypeScript-2f72bc?style=for-the-badge&logo=typescript&logoColor=white&labelColor=000000)]()
 [![Node.js](https://img.shields.io/badge/node.js-76c339?style=for-the-badge&logo=node.js&logoColor=white&labelColor=000000)]()
 
+# Project link
+
+Github: [https://zearkiatos.github.io/angular-books-list-web/](https://zearkiatos.github.io/angular-books-list-web/)
+
 # AngularBooksListWeb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.

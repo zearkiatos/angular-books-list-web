@@ -21,6 +21,10 @@ export class AuthorCreateComponent implements OnInit {
     this.authorForm.reset();
   }
 
+  cancelCreation() {
+    this.authorForm.reset();
+  }
+
   ngOnInit() {
     this.authorForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2)]],

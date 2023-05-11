@@ -1,6 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { ReviewModule } from './review/review.module';
 import { BookRoutingModule } from './book/book.routing';
 import { AuthorRoutingModule } from './author/author.routing';
 import { AuthorDetailComponent } from './author/author-detail/author-detail.component';
+import { HttpErrorInterceptorService } from 'src/interceptors/HttpErrorInterceptor.service';
 
 @NgModule({
   declarations: [AppComponent, AuthorDetailComponent],
@@ -23,8 +26,21 @@ import { AuthorDetailComponent } from './author/author-detail/author-detail.comp
     AuthorModule,
     ReviewModule,
     HttpClientModule,
+    EditorialModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

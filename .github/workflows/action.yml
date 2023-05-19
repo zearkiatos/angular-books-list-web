@@ -37,7 +37,7 @@ jobs:
       run: npm run test:ci
     - name: Test e2e 🧪 💻🤖
       run: |
-        make docker-dev-up
+        docker-compose -f docker-compose.develop.yml up --build -d
         npm run cypress:ci
     - name: Build docker 🐳
       run: docker build . -t=angular-books-list-web:build-$GITHUB_RUN_NUMBER

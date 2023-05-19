@@ -1,6 +1,6 @@
 describe('My First Test', () => {
-  it('My first Test', () => {
+  it('Should be show the page title', () => {
     cy.visit('/')
     cy.contains('Bookly')
-  })
+  });
 })

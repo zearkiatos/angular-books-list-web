@@ -12,7 +12,8 @@
     "deploy": "npm run config && ng build --base-href=/angular-books-list-web/",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "cypress:ci": "cypress run --headless"
   },
   "private": true,
   "dependencies": {

@@ -1,6 +1,6 @@
 describe('My First Test', () => {
-  it('Visits the initial project page', () => {
+  it('My first Test', () => {
     cy.visit('/')
-    cy.contains('app is running!')
+    cy.contains('Bookly')
   })
 })

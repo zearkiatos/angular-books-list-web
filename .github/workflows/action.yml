@@ -35,10 +35,10 @@ jobs:
         BOOK_STORE_BASE_URL: ${{ secrets.BOOK_STORE_BASE_URL }}
     - name: Test 🧪
       run: npm run test:ci
-    - name: Run the application
-      run: npm run start
     - name: Test e2e 🧪 💻🤖
-      run: npm run cypress:ci
+      run: |
+        make docker-dev-up
+        npm run cypress:ci
     - name: Build docker 🐳
       run: docker build . -t=angular-books-list-web:build-$GITHUB_RUN_NUMBER
     - name: Build

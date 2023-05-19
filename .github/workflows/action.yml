@@ -39,6 +39,7 @@ jobs:
       run: |
         docker-compose -f docker-compose.develop.yml up --build -d
         npm run cypress:ci
+        docker-compose down
     - name: Build docker 🐳
       run: docker build . -t=angular-books-list-web:build-$GITHUB_RUN_NUMBER
     - name: Build
